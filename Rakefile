@@ -12,9 +12,9 @@ begin
     s.files =  FileList["[A-Za-z]*", "{lib,features}/**/*", ".gitignore"]
     s.add_dependency "nokogiri", ">= 1.4.1"
     s.add_dependency "json", ">= 1.4.3"
-    # s.add_dependency "bson"
-    # s.add_dependency "mongo", ">= 1.0.1"
-    # s.add_dependency "mongo_mapper", ">= 0.7.5"
+    s.add_dependency "bson",
+    s.add_dependency "mongo", ">= 1.0.1"
+    s.add_dependency "mongo_mapper", ">= 0.7.5"
     s.add_dependency "chronic", ">= 0.2.3"
     #s.add_dependency "rack", ">= 1.1.0"
   end
