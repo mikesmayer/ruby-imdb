@@ -6,26 +6,15 @@ ruby-imdb is IMDB parsing library for Ruby.
 Features
 --------
 
-- Dynamic Caching with MongoDB backend
 - Object Oriented design
 - Fast access to data
 
-Download
+Using in Gemfile
 --------
 
-- [sudo] gem i ruby-imdb
-- http://github.com/yalcin/ruby-imdb
-- git clone git://github.com/yalcin/ruby-imdb.git
+- add the following code to your Gemfile: `gem 'ruby-imdb', github: 'tibbon/ruby-imdb'`
+- run `bundle install` from the bash prompt
 
-
-Enable caching
---------------
-
-    require 'rubygems'
-    require 'imdb'
-
-    IMDB::Configuration.caching = true
-    IMDB::Configuration.db(:hostname => "localhost", :database => "imdb")
 
 Usage
 -----
@@ -33,8 +22,7 @@ Usage
     require 'imdb'
 
     s = IMDB::Search.new
-    s.movie("fear and loathing in las vegas").each do
-      |result|
+    s.movie("fear and loathing in las vegas").each do |result|
       movie = IMDB::Movie.new(result.id)
       p movie.title
       movie.cast.each do
@@ -47,15 +35,11 @@ Usage
     movie = IMDB::Movie.new('0120669')
     p movie.poster
 
-Examples
---------
-
-Are Under features directory
 
 Authors
 -------
 - Yalcin ACIKYILDIZ (mailto:yalcin@webliyacelebi.com)
-
+- Edited README.md by David Fisher/tibbon
 
 This library is released under the terms of the GNU/GPL.
 
